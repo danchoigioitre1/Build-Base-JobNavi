@@ -1,4 +1,4 @@
-import { SetStorage, GetStorage } from '../../data/protocols'
+import { SetStorage, GetStorage } from '../../data/protocols/cache'
 
 
 

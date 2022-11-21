@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { type } from '@testing-library/user-event/dist/type';
+
+
 
 type Props = {}
 
@@ -22,3 +22,5 @@ function Footer(props: Props) {
 }
 
 export default Footer;
+
+
