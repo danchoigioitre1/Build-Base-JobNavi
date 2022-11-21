@@ -11,16 +11,10 @@ Enterprise.propTypes = {
 };
 
 function Enterprise(props: Props) {
-    const [lang, setLang] = useState('')
-    const languages = useSelector((state: any): any => state.changeLanguagesReducer)
-
-    useLayoutEffect(() => {
-        setLang(languages.lang)
-    })
-
+   
     return (
         <div>
-           {lang === 'en' ? 'EnterPrise' : 'Doanh nghiệp'}
+           EnterPrise
         </div>
     );
 }

@@ -1,56 +1,46 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react';
 
 
-import { LocalStorageAdapter } from '../../infra/cache/local-storage';
+import { useTranslation } from "react-i18next";
+
 import { Link } from 'react-router-dom'
-import { LANGUAGES } from '../constant/'
-import { changeLanguages } from '../../common/Redux/action/changeLangAction';
 
+import { changeLanguage } from '../../main/services/i18n/changeLang';
+import '../../main/services/i18n/i18n'
 
 type Props = {}
 
-Header.propTypes = {
-
-};
-
-Header.defaultProps = {
 
 
-}
+
 
 function Header(props: Props) {
-  
 
-    const dispatch = useDispatch()
-    const languages = useSelector((state: any): any => state.changeLanguagesReducer)
+    const { t } = useTranslation();
+
+   
+ 
    
 
 
 
-    const handleChangeLanguages = (lang: any) => {
-        dispatch(changeLanguages(lang))
-
-
-    }
-
-
+    
     return (
         <div>
             HEADER
 
             <div>
                 <ul>
-                    <li><button onClick={() => handleChangeLanguages(LANGUAGES.VI)}>Vi</button></li>
-                    <li><button onClick={() => handleChangeLanguages(LANGUAGES.EN)}>En</button></li>
+                    <li><button onClick={() => changeLanguage('vi')}>Vi</button></li>
+                    <li><button onClick={() => changeLanguage('en')}>En</button></li>
                 </ul>
             </div>
 
             <ul>
-                <li><Link to='/'> {languages.lang === 'en' ? 'Home' : 'Trang chủ'} </Link></li>
-                <li><Link to='/Admin'>  {languages.lang === 'en' ? 'Admin' : 'Quản lí'} </Link></li>
-                <li><Link to='/User'> {languages.lang === 'en' ? 'User' : 'Người dùng'}</Link></li>
-                <li><Link to='/EnterPrise'> {languages.lang === 'en' ? 'EnterPrise' : 'Doanh nghiệp'} </Link></li>
+                <li><Link to='/'>{t('Home')}</Link></li>
+                <li><Link to='/Admin'>  {t('Admin')} </Link></li>
+                <li><Link to='/User'> {t('User')}</Link></li>
+                <li><Link to='/EnterPrise'> {t('EnterPrise')} </Link></li>
 
 
             </ul>

@@ -14,16 +14,10 @@ Home.propTypes = {
 
 function Home(props:Props) {
 
-    const [lang, setLang] = useState('')
-    const languages = useSelector((state: any): any => state.changeLanguagesReducer)
-   
-    useLayoutEffect(() => {
-        setLang(languages.lang)
-    })
-
+    
     return (
         <div>
-             {lang === 'en' ? 'Home' : 'Trang chủ'}
+            Home
         </div>
     );
 }

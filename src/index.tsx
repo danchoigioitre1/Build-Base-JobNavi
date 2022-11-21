@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './UI/index.css';
 import App from './UI/App';
@@ -11,7 +11,7 @@ import EnterPrise from './UI/Pages/Enterprise/Enterprise';
 import NotFound from './UI/Pages/NotFound/NotFound';
 import { Provider } from 'react-redux';
 import store from './common/Redux/store/store';
-import Loading from './UI/component/Loading';
+// import Loading from './UI/component/Loading';
 import SignUpForm from './UI/component/SignupForm';
 import SignInForm from './UI/component/SignInForm';
 
@@ -20,6 +20,7 @@ import SignInForm from './UI/component/SignInForm';
 // const EnterPrise = lazy(() => import('./UI/Pages/Enterprise/Enterprise'))
 // const Home = lazy(() => import('./UI/Pages/Home/Home'))
 // const NotFound = lazy(() => import('./UI/Pages/NotFound/NotFound'))
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -33,8 +34,8 @@ root.render(
           <Route path='/' element={<App />}>
             <Route index element={<Home />} />
             <Route path='User' element={<User />} >
-               <Route index  element={< SignUpForm/>}/>
-               <Route path='SigIn' element={< SignInForm/>}/>
+              <Route index element={< SignUpForm />} />
+              <Route path='SigIn' element={< SignInForm />} />
             </Route>
             <Route path='Admin' element={<Admin />} />
             <Route path='Enterprise' element={<EnterPrise />} />

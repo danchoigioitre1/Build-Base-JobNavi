@@ -1,9 +1,9 @@
-import changeLanguagesReducer from "./changeLanguagesReducer";
+import {reducer} from "./reducer";
 import { combineReducers } from "redux";
 
 
 const rootReducer = combineReducers({
-    changeLanguagesReducer:changeLanguagesReducer
+    reducer
 });
 
 export default rootReducer;
